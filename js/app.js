@@ -8,7 +8,7 @@ let Seattle = {
    cookiesPerHour:[],
 
   customersPerHourFun: function (min, max) {
-     for (let i = 0; i < 14; i++) {
+     for (let i = 0; i <= 14; i++) {
        this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
        }
        console.log( this.customersPerHour);},
@@ -16,7 +16,7 @@ let Seattle = {
 // *************************************************************
 
     cookiesPerHourFun :function(numOfCookies)  {
-       for (let i = 0; i < 14; i++) {
+       for (let i = 0; i <= 14; i++) {
         this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* numOfCookies) ;
 
          }
@@ -34,17 +34,23 @@ let Seattle = {
          articleEl.appendChild(pEl);
  
          let ulEl = document.createElement('ul');
-         let x=1;
+         let x=6;
+         let y =1;
          let liEl = ""
          for (let i = 0; i < this.cookiesPerHour.length; i++) {
               liEl = document.createElement('li');
              if (i<=5){
-             liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;}
+             liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;
+             x++;}
+             else if(i==6){
+              liEl.textContent =`${12}PM :  ${this.cookiesPerHour[i]}`;
+            }
              
-              else if(i>5){
-               liEl.textContent =`${x}PM :  ${this.cookiesPerHour[i]}`;
+              else if(i >6){
+               liEl.textContent =`${y}PM :  ${this.cookiesPerHour[i]}`;
+               y++;
              };
-             x++;
+             
              ulEl.appendChild(liEl);
             };
             let arraysum = 1;
@@ -69,7 +75,7 @@ let Tokyo = {
    cookiesPerHour:[],
 
   customersPerHourFun: function (min, max) {
-     for (let i = 0; i < 14; i++) {
+     for (let i = 0; i <= 14; i++) {
        this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
        }
        console.log( this.customersPerHour);},
@@ -77,7 +83,7 @@ let Tokyo = {
 // *************************************************************
 
     cookiesPerHourFun :function(numOfCookies)  {
-       for (let i = 0; i < 14; i++) {
+       for (let i = 0; i <= 14; i++) {
         this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* numOfCookies) ;
 
          }
@@ -95,15 +101,21 @@ let Tokyo = {
          articleEl.appendChild(pEl);
  
          let ulEl = document.createElement('ul');
-         let x=1;
+         let x=6;
+         let y=1;
          let liEl = ""
          for (let i = 0; i < this.cookiesPerHour.length; i++) {
               liEl = document.createElement('li');
              if (i<=5){
              liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;}
+             else if(i==6){
+              liEl.textContent =`${12}PM :  ${this.cookiesPerHour[i]}`;
+              
+            }
              
-              else if(i>5){
-               liEl.textContent =`${x}PM :  ${this.cookiesPerHour[i]}`;
+              else if(i>6){
+               liEl.textContent =`${y}PM :  ${this.cookiesPerHour[i]}`;
+               y++;
              };
              x++;
              ulEl.appendChild(liEl);
@@ -130,7 +142,7 @@ let Dubai = {
          cookiesPerHour:[],
       
         customersPerHourFun: function (min, max) {
-           for (let i = 0; i < 14; i++) {
+           for (let i = 0; i <= 14; i++) {
              this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
              }
              console.log( this.customersPerHour);},
@@ -138,7 +150,7 @@ let Dubai = {
       // *************************************************************
       
           cookiesPerHourFun :function(numOfCookies)  {
-             for (let i = 0; i < 14; i++) {
+             for (let i = 0; i <=14; i++) {
               this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* numOfCookies) ;
       
                }
@@ -156,15 +168,21 @@ let Dubai = {
                articleEl.appendChild(pEl);
        
                let ulEl = document.createElement('ul');
-               let x=1;
+               let x=6;
+               let y=1;
                let liEl = ""
                for (let i = 0; i < this.cookiesPerHour.length; i++) {
                     liEl = document.createElement('li');
                    if (i<=5){
                    liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;}
+                   else if(i==6){
+                    liEl.textContent =`${12}PM :  ${this.cookiesPerHour[i]}`;
+                    
+                  }
                    
-                    else if(i>5){
-                     liEl.textContent =`${x}PM :  ${this.cookiesPerHour[i]}`;
+                    else if(i>6){
+                     liEl.textContent =`${y}PM :  ${this.cookiesPerHour[i]}`;
+                     y++;
                    };
                    x++;
                    ulEl.appendChild(liEl);
@@ -191,7 +209,7 @@ let Paris = {
                cookiesPerHour:[],
             
               customersPerHourFun: function (min, max) {
-                 for (let i = 0; i < 14; i++) {
+                 for (let i = 0; i <= 14; i++) {
                    this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
                    }
                    console.log( this.customersPerHour);},
@@ -199,7 +217,7 @@ let Paris = {
             // *************************************************************
             
                 cookiesPerHourFun :function(numOfCookies)  {
-                   for (let i = 0; i < 14; i++) {
+                   for (let i = 0; i <= 14; i++) {
                     this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* numOfCookies) ;
             
                      }
@@ -217,15 +235,21 @@ let Paris = {
                      articleEl.appendChild(pEl);
              
                      let ulEl = document.createElement('ul');
-                     let x=1;
+                     let x=6;
+                     let y=1;
                      let liEl = ""
                      for (let i = 0; i < this.cookiesPerHour.length; i++) {
                           liEl = document.createElement('li');
                          if (i<=5){
                          liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;}
+                         else if(i==6){
+                          liEl.textContent =`${12}PM :  ${this.cookiesPerHour[i]}`;
+                          
+                        }
                          
-                          else if(i>5){
-                           liEl.textContent =`${x}PM :  ${this.cookiesPerHour[i]}`;
+                          else if(i>6){
+                           liEl.textContent =`${y}PM :  ${this.cookiesPerHour[i]}`;
+                           y++;
                          };
                          x++;
                          ulEl.appendChild(liEl);
@@ -252,7 +276,7 @@ let lima = {
                      cookiesPerHour:[],
                   
                     customersPerHourFun: function (min, max) {
-                       for (let i = 0; i < 14; i++) {
+                       for (let i = 0; i <= 14; i++) {
                          this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
                          }
                          console.log( this.customersPerHour);},
@@ -260,7 +284,7 @@ let lima = {
                   // *************************************************************
                   
                       cookiesPerHourFun :function(numOfCookies)  {
-                         for (let i = 0; i < 14; i++) {
+                         for (let i = 0; i <= 14; i++) {
                           this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* numOfCookies) ;
                   
                            }
@@ -278,15 +302,21 @@ let lima = {
                            articleEl.appendChild(pEl);
                    
                            let ulEl = document.createElement('ul');
-                           let x=1;
+                           let x=6;
+                           let y=1;
                            let liEl = ""
                            for (let i = 0; i < this.cookiesPerHour.length; i++) {
                                 liEl = document.createElement('li');
                                if (i<=5){
                                liEl.textContent =`${x}AM :  ${ this.cookiesPerHour[i]}`;}
+                               else if(i==6){
+                                liEl.textContent =`${12}PM :  ${this.cookiesPerHour[i]}`;
+                                
+                              }
                                
-                                else if(i>5){
-                                 liEl.textContent =`${x}PM :  ${this.cookiesPerHour[i]}`;
+                                else if(i>6){
+                                 liEl.textContent =`${y}PM :  ${this.cookiesPerHour[i]}`;
+                                 y++;
                                };
                                x++;
                                ulEl.appendChild(liEl);
