@@ -103,6 +103,7 @@ createTable();
 // ****************************************************************************
 function createTablefooter() {
   let tFoot = document.createElement('tfoot');
+  //the tfoot is inasted of the tr it is a row 
   tableEl.appendChild(tFoot);
   let trEl = document.createElement('tr');
   tFoot.appendChild(trEl);
