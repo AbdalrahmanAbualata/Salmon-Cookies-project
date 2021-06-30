@@ -12,7 +12,7 @@ body{
     margin-top:40px;
     margin-bottom: 30px;
     width: 75%;
-    border: 5px solid black;
+    border: 5px solid rgb(119, 60, 18);
     background-color: aliceblue;   
     text-align: center;
     vertical-align: middle;
@@ -38,3 +38,31 @@ body{
            , #8a4545 0%, #0b1736 74%);}
            footer{clear: both;
         margin-top: 20px;}
+
+        form {
+          border: 5px solid rgb(119, 60, 18);
+          float: left;
+          margin-left: 573px;
+          background-color: blanchedalmond;
+          padding: 25px;
+          text-align: justify;
+         
+
+        }
+        legend{
+          border-radius: 67px;
+          border: 1px solid black;
+          background-color: rgb(119, 60, 18);
+          color: cornsilk;
+          font-size: x-large;
+          margin: 53px;
+          padding:5px;
+        }
+        label{font-weight: bold;}
+        input{font-weight: bold;}
+       form  #label1{
+         margin-left: 50px;}
+         #label4{
+           margin-left: 37px;
+         }
+          
