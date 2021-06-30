@@ -3,14 +3,18 @@ let hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:0
 let locations = [];
 
 function Location(name,min, max, averageCookies) {
+
     this.locationName=name;
     this.minHourlyCustomers = min;
     this.maxHourlyCustomers = max;
     this.averageCookies = averageCookies;
     this.customersPerHour=[];
     this.cookiesPerHour=[];
+    this.total=0;
     locations.push(this);
+
 };
+
 Location.prototype.customersPerHourFun= function (min, max) {
   for (let i = 0; i < hours.length; i++) {
     this.customersPerHour[i] = Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,7 +24,7 @@ Location.prototype.customersPerHourFun= function (min, max) {
     Location.prototype.cookiesPerHourFun =function(averageCookies)  {
   for (let i = 0; i < hours.length; i++) {
    this.cookiesPerHour[i]= Math.floor( this.customersPerHour [i]* averageCookies) ;
-
+   this.total=this.total+this.cookiesPerHour[i];
     };
   };
     let seattle = new Location('seattle', 23, 65,6.3);
@@ -44,8 +48,12 @@ let Paris = new Location('Paris',20, 38,2.3);
 let lima = new Location('lima',2, 16,4.2);
     lima.customersPerHourFun(2,16);
     lima.cookiesPerHourFun(4.2);
-    // console.log(lima.customersPerHour);
+    // console.log(lima.customersPerHour)
     // console.log(lima.cookiesPerHour);
+
+
+
+
 
 console.log(locations);
 // *******************************************************************
@@ -70,37 +78,36 @@ function createTableHeader() {
   thEl2.textContent = 'Daily  Location Total';
   trEl.appendChild(thEl2);
 };
-createTableHeader();
+
 // *************************************************************************
 let aDailyLocationTotalSam=0;
-function createTable(){
-  for (let i = 0; i < locations.length; i++) {
+
+Location.prototype.createTable=function(){
 
     let trEl = document.createElement('tr');
     let td = document.createElement('td');
     trEl.appendChild(td);
-    td.textContent = locations[i].locationName;
-    let aDailyLocationTotal= 0;
+    td.textContent = this.locationName;
     for (let y = 0; y < hours.length; y++) {
    
-      aDailyLocationTotal = locations[i].cookiesPerHour[y] + aDailyLocationTotal
+      
 
     let td1 = document.createElement('td');
-    td1.textContent = locations[i].cookiesPerHour[y];
+    td1.textContent = this.cookiesPerHour[y];
     trEl.appendChild(td1);
     }
-    aDailyLocationTotalSam=aDailyLocationTotalSam+aDailyLocationTotal ;
+    aDailyLocationTotalSam=aDailyLocationTotalSam+this.total;
     let td2 = document.createElement('td');
-    td2.textContent =`${aDailyLocationTotal}`;
+    td2.textContent =`${this.total}`;
     trEl.appendChild(td2);
     tableEl.appendChild(trEl);
 }
 
-}
 
-createTable();
+
 
 // ****************************************************************************
+let arraysum = 0;
 function createTablefooter() {
   let tFoot = document.createElement('tfoot');
   //the tfoot is inasted of the tr it is a row 
@@ -115,7 +122,7 @@ function createTablefooter() {
   for (let i = 0; i < hours.length; i++) {
 
     let thEl1 = document.createElement('th');
-    let arraysum = 0;
+    arraysum = 0;
     for (let y = 0; y < locations.length; y++) {
    
       arraysum = locations[y].cookiesPerHour[i] + arraysum
@@ -128,10 +135,39 @@ let thEl2 = document.createElement('th');
   thEl2.textContent = `${aDailyLocationTotalSam}`;
   trEl.appendChild(thEl2);
 };
+
+createTableHeader();
+for (let i = 0; i < locations.length; i++) {
+    locations[i].createTable();
+}
 createTablefooter();
 
-                    
-            
-            
+
+// *******************************************************************
+   
+let myForm = document.getElementById('myForm');
+myForm.addEventListener('submit',addlocation);
+function addlocation(event){
+  event.preventDefault();
+  let locationName =event.target.locationName.value; /*.split(','); if you have array input values*/
+  let minHourlyCustomers=event.target.minHourlyCustomers.value ;
+  let maxHourlyCustomers=event.target.maxHourlyCustomers.value ;
+  let averageCookies= event.target.averageCookies.value ;
+
+  let newlocation = new Location(locationName,minHourlyCustomers,maxHourlyCustomers,averageCookies);
+  newlocation.customersPerHourFun(minHourlyCustomers,maxHourlyCustomers);
+  newlocation.cookiesPerHourFun(averageCookies);
+  newlocation.createTable();
+  tableEl.deleteTFoot();
+  createTablefooter();
+  console.log(newlocation.customersPerHour);
+  console.log(newlocation.cookiesPerHour);
+  
+}
+
+
+
+
+
               
-      
+
