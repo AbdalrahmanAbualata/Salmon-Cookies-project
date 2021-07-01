@@ -137,7 +137,7 @@ let thEl2 = document.createElement('th');
 };
 
 createTableHeader();
-for (let i = 0; i < locations.length; i++) {
+for (let i = 0; i <locations.length; i++) {
     locations[i].createTable();
 }
 createTablefooter();
@@ -164,7 +164,6 @@ function addlocation(event){
   console.log(newlocation.cookiesPerHour);
   
 }
-
 
 
 
