@@ -4,14 +4,14 @@
   html {
     scroll-behavior: smooth;
   }
-    body{
-        font-family: Arial, Helvetica, sans-serif;
+    body{ 
+       
            background-image: linear-gradient( 
        0deg
         , #101010 0%, #6474a0 74%);
     
        }
-       header{
+       header{ 
         margin-bottom: 20px;
         border: brown 5px solid;
 
@@ -21,10 +21,12 @@
         300deg
          , #8a4545 0%, #0b1736 74%);
        }
-       h1{
+       h1{ font-family: 'Orelega One', cursive;
+           color: rgb(206, 45, 45);
+
            font-size: 50px;
            text-align: center;
-         color: cornsilk;
+         
          display: inline-block;
          position:absolute;
          margin-left: 29%;
@@ -32,7 +34,7 @@
        }
        header:hover{ background-image: linear-gradient( 
         270deg
-         , #101010 0%, #6474a0 74%);
+         , #f8f8f8 0%, #d4d9e7 74%);
 
        }
        header img {width: 100px;
@@ -54,53 +56,71 @@ margin-left: 20px;
     float: right;
     width: 25%;
   }
+ #s2 li  {color: rgb(233, 191, 141);
+
+ }
+ #s2 a  {color: rgb(32, 224, 151);
+  font-size: 15px;
+ }
   .placeholder {
     width: 100%;}
   .placeholder {
   margin: 15px;
   }
   footer {
+    background-image: linear-gradient( 
+      300deg
+       , #8a4545 0%, #0b1736 74%);
     clear: both;
   
     padding: 20px;
     font-weight: bolder;
   }
-  footer p {
-    text-align: center;
-  }
-  p {
+  
+ 
+  p {color: rgb(233, 191, 141);
+    font-family:'Times New Roman', Times, serif;
     font-weight: bold;
     text-align: justify;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 20pt;
+    text-indent: 20pt;
   }
-  h2 {text-align: center;
+  h2 {font-family: 'Orelega One', cursive;
+    color: rgb(206, 45, 45);
+    text-align: center;
     font-weight: bold;
     font-size: 40px;
     border: solid 1px brown;
     border-radius: 67px;
     background-image: linear-gradient( 
-  270deg
-   , #191f6b 0%, #ac5726 74%);
+      300deg
+       , #8a4545 0%, #0b1736 74%);
 margin-top: 10px;
 margin-bottom: 10px;
+padding: 5px;
   }
 h2:hover{background-image: linear-gradient( 
-  300deg
-   , #8a4545 0%, #0b1736 74%);}
-   h3{text-align: center;
+  270deg
+   , #f8f8f8 0%, #d4d9e7 74%);}
+   h3{
+    color: rgb(206, 45, 45);
+    font-family: 'Orelega One', cursive;
+    text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     border: solid 1px brown;
     border-radius: 67px;
     background-image: linear-gradient( 
-  270deg
-   , #191f6b 0%, #ac5726 74%);
+        300deg
+         , #8a4545 0%, #0b1736 74%);
 margin-top: 10px;
 margin-bottom: 10px;
+padding: 10px;
    }
    h3:hover{background-image: linear-gradient( 
-    300deg
-     , #8a4545 0%, #0b1736 74%);}
+    270deg
+     , #f8f8f8 0%, #d4d9e7 74%);}
      li{ font-weight: bold;
       font-size: 20px;
 margin: 10px;
@@ -112,14 +132,14 @@ margin: 10px;
       border: solid 1px rgb(157, 204, 28);
       border-radius: 67px;
       background-image: linear-gradient( 
-    270deg
-     , #98c03b 0%, #fc1515 74%);
+        300deg
+         , #8a4545 0%, #0b1736 74%);
   margin-top: 10px;
   margin-bottom: 10px;
      }
      nav:hover{background-image: linear-gradient( 
-      300deg
-       , #dd1515 0%, #ccba19 74%);}
+      270deg
+       , #f8f8f8 0%, #d4d9e7 74%);}
        li{ font-weight: bold;
         font-size: 20px;
   margin: 10px;
@@ -128,7 +148,8 @@ margin: 10px;
 
 
      }
-    nav a{color: rgb(209, 218, 224);
+    nav a{font-family: 'Orelega One', cursive;
+      color: rgb(206, 45, 45);
 
      }
     
